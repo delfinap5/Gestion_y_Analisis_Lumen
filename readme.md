@@ -1,5 +1,18 @@
 # 💇‍♀️ Sistema de Gestión y Análisis para Peluquería
 
+indice:
+Descripción
+Objetivos
+Modelo Conceptual
+Diagrama ERD  ← nuevo
+Modelo Relacional
+Consultas SQL
+KPIs
+Roadmap
+Stack Tecnológico
+Arquitectura del Sistema
+Estado del Proyecto
+
 ## 📖 Descripción
 
 Sistema web para cálculo automático de costos, generación de presupuestos y análisis comercial para una peluquería.
@@ -25,9 +38,9 @@ El sistema permitirá:
 
 ---
 
-# 🧱 Modelo Conceptual
+## 🧱 Modelo Conceptual
 
-## 1️⃣ Insumos
+### 1️⃣ Insumos
 
 Materias primas utilizadas en los servicios.
 
@@ -49,7 +62,7 @@ Materias primas utilizadas en los servicios.
 
 ---
 
-## 2️⃣ Servicios
+### 2️⃣ Servicios
 
 Servicios ofrecidos por la peluquería.
 
@@ -68,7 +81,7 @@ Servicios ofrecidos por la peluquería.
 
 ---
 
-## 3️⃣ Recetas
+### 3️⃣ Recetas
 
 Relación entre servicios e insumos.
 
@@ -88,7 +101,7 @@ Costo = Σ (cantidad_insumo × costo_unitario)
 
 ---
 
-## 4️⃣ Clientes
+### 4️⃣ Clientes
 
 Información básica para historial y análisis.
 
@@ -101,7 +114,7 @@ Información básica para historial y análisis.
 
 ---
 
-## 5️⃣ Presupuestos
+### 5️⃣ Presupuestos
 
 Registro de presupuestos generados.
 
@@ -114,20 +127,88 @@ Registro de presupuestos generados.
 
 ---
 
-## 6️⃣ Detalle_Presupuesto
+### 6️⃣ Detalle_Presupuesto
 
 Servicios incluidos dentro de cada presupuesto.
 
 **Atributos:**
-- `id`
-- `presupuesto_id` (FK)
-- `servicio_id` (FK)
-- `cantidad`
-- `subtotal`
+
+- id
+- nombre
+- unidad
+- costo_unitario
+- stock_actual
+- stock_minimo
+- fecha_actualizacion
 
 ---
 
-# 🗄️ Modelo Relacional
+## 🗂️ Diagrama Entidad–Relación (ERD)
+
+```mermaid
+erDiagram
+
+CLIENTES {
+    int id_cliente PK
+    string nombre
+    string telefono
+    string email
+    date fecha_registro
+}
+
+INSUMOS {
+    int id_insumo PK
+    string nombre
+    string unidad
+    decimal costo_unitario
+    int stock_actual
+    int stock_minimo
+}
+
+SERVICIOS {
+    int id_servicio PK
+    string nombre
+    string categoria
+    decimal precio_venta
+    int duracion_estimada
+}
+
+RECETAS_SERVICIO {
+    int id_receta PK
+    int servicio_id FK
+    int insumo_id FK
+    decimal cantidad
+}
+
+PRESUPUESTOS {
+    int id_presupuesto PK
+    int cliente_id FK
+    date fecha
+    decimal total
+    string estado
+}
+
+DETALLE_PRESUPUESTO {
+    int id_detalle PK
+    int presupuesto_id FK
+    int servicio_id FK
+    int cantidad
+    decimal subtotal
+}
+
+CLIENTES ||--o{ PRESUPUESTOS : genera
+PRESUPUESTOS ||--o{ DETALLE_PRESUPUESTO : contiene
+SERVICIOS ||--o{ DETALLE_PRESUPUESTO : incluido_en
+SERVICIOS ||--o{ RECETAS_SERVICIO : utiliza
+INSUMOS ||--o{ RECETAS_SERVICIO : componente
+```
+
+El modelo entidad–relación representa las relaciones entre clientes, servicios, insumos y presupuestos.
+Las recetas técnicas permiten calcular automáticamente el costo de cada servicio según los insumos utilizados.
+
+---
+
+## 🗄️ Modelo Relacional
 
 - Un servicio tiene muchos insumos (vía receta).
 - Un cliente puede tener muchos presupuestos.
@@ -136,7 +217,7 @@ Servicios incluidos dentro de cada presupuesto.
 
 ---
 
-# 🧮 Ejemplo de Consulta SQL
+## 🧮 Consulta SQL
 
 Costo total por servicio:
 
@@ -176,7 +257,7 @@ GROUP BY mes;
 
 ---
 
-# 📊 KPIs Propuestos
+## 📊 KPIs Propuestos
 
 **Comerciales**
 - Servicio más vendido
@@ -193,7 +274,7 @@ GROUP BY mes;
 
 ---
 
-# 🚀 Roadmap
+## 🚀 Roadmap
 
 **Fase 1 – Modelado**
 - Normalización de insumos.
@@ -216,7 +297,7 @@ GROUP BY mes;
 
 ---
 
-# 🛠️ Stack Tecnológico
+## 🛠️ Stack Tecnológico
 
 - Backend: Python
 - Base de datos: MySQL
@@ -226,7 +307,7 @@ GROUP BY mes;
 
 ---
 
-# 🧠 Enfoque Analítico
+## 🧠 Enfoque Analítico
 
 Este proyecto busca transformar recetas técnicas en datos estructurados para:
 
@@ -238,6 +319,7 @@ Este proyecto busca transformar recetas técnicas en datos estructurados para:
 
 ---
 
-# 📌 Estado del Proyecto
+
+## 📌 Estado del Proyecto
 
 En etapa de diseño y modelado de datos.
