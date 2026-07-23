@@ -5,13 +5,13 @@
 - [📖 Descripción](#-descripción)
 - [🎯 Objetivos](#-objetivos)
 - [🧩 Modelo Conceptual](#-modelo-conceptual)
-- [🗂️ Diagrama ERD](#️-diagrama-erd)
+- [🗂️ Diagrama ERD](#️-diagrama-(erd))
 - [🗃️ Modelo Relacional](#️-modelo-relacional)
 - [💻 Consultas SQL](#-consultas-sql)
 - [📊 KPIs](#-kpis)
 - [🛣️ Roadmap](#️-roadmap)
 - [⚙️ Stack Tecnológico](#️-stack-tecnológico)
-- [🏗️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
+- [🏗️ Enfoque Analítico](#️-enfoque-analítico)
 - [🚀 Estado del Proyecto](#-estado-del-proyecto)
 
 ## 📖 Descripción
@@ -29,7 +29,7 @@ El sistema permitirá:
 
 ---
 
-## 🎯 Objetivos del Proyecto
+## 🎯 Objetivos
 
 - Estandarizar recetas técnicas de servicios.
 - Automatizar el cálculo de costos.
@@ -144,7 +144,7 @@ Servicios incluidos dentro de cada presupuesto.
 
 ---
 
-## 🗂️ Diagrama Entidad–Relación (ERD)
+## 🗂️ Diagrama (ERD)
 
 ```mermaid
 erDiagram
@@ -258,7 +258,7 @@ GROUP BY mes;
 
 ---
 
-## 📊 KPIs Propuestos
+## 📊 KPIs
 
 **Comerciales**
 - Servicio más vendido
