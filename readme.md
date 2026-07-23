@@ -11,7 +11,7 @@
 - [📊 KPIs](#-kpis)
 - [🛣️ Roadmap](#️-roadmap)
 - [⚙️ Stack Tecnológico](#️-stack-tecnológico)
-- [🏗️ Enfoque Analítico](#️-enfoque-analítico)
+- [🧠 Enfoque Analítico](#️-enfoque-analítico)
 - [🚀 Estado del Proyecto](#-estado-del-proyecto)
 
 ## 📖 Descripción
@@ -144,7 +144,7 @@ Servicios incluidos dentro de cada presupuesto.
 
 ---
 
-## 🗂️ Diagrama (ERD)
+## 🗂️ Diagrama (erd)
 
 ```mermaid
 erDiagram
