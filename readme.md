@@ -1,17 +1,18 @@
 # 💇‍♀️ Sistema de Gestión y Análisis para Peluquería
 
-indice:
-Descripción
-Objetivos
-Modelo Conceptual
-Diagrama ERD  ← nuevo
-Modelo Relacional
-Consultas SQL
-KPIs
-Roadmap
-Stack Tecnológico
-Arquitectura del Sistema
-Estado del Proyecto
+# 📑 Índice
+
+- [📖 Descripción](#-descripción)
+- [🎯 Objetivos](#-objetivos)
+- [🧩 Modelo Conceptual](#-modelo-conceptual)
+- [🗂️ Diagrama ERD](#️-diagrama-erd)
+- [🗃️ Modelo Relacional](#️-modelo-relacional)
+- [💻 Consultas SQL](#-consultas-sql)
+- [📊 KPIs](#-kpis)
+- [🛣️ Roadmap](#️-roadmap)
+- [⚙️ Stack Tecnológico](#️-stack-tecnológico)
+- [🏗️ Arquitectura del Sistema](#️-arquitectura-del-sistema)
+- [🚀 Estado del Proyecto](#-estado-del-proyecto)
 
 ## 📖 Descripción
 
