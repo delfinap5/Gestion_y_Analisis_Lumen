@@ -1,18 +1,18 @@
 # 💇‍♀️ Sistema de Gestión y Análisis para Peluquería
 
-# 📑 Índice
+## 📑 Índice
 
 - [📖 Descripción](#-descripción)
 - [🎯 Objetivos](#-objetivos)
-- [🧩 Modelo Conceptual](#-modelo-conceptual)
-- [🗂️ Diagrama ERD](#️-diagrama-(erd))
-- [🗃️ Modelo Relacional](#️-modelo-relacional)
-- [💻 Consultas SQL](#-consultas-sql)
+- [🧱 Modelo Conceptual](#-modelo-conceptual)
+- [🗂️ Diagrama ERD](#-diagrama-erd)
+- [🗄️ Modelo Relacional](#-modelo-relacional)
+- [🧮 Consultas SQL](#-consultas-sql)
 - [📊 KPIs](#-kpis)
-- [🛣️ Roadmap](#️-roadmap)
-- [⚙️ Stack Tecnológico](#️-stack-tecnológico)
-- [🧠 Enfoque Analítico](#️-enfoque-analítico)
-- [🚀 Estado del Proyecto](#-estado-del-proyecto)
+- [🛣️ Roadmap](#-roadmap)
+- [🛠️ Stack Tecnológico](#️-stack-tecnológico)
+- [🧠 Enfoque Analítico](#-enfoque-analítico)
+- [📌 Estado del Proyecto](#-estado-del-proyecto)
 
 ## 📖 Descripción
 
@@ -144,7 +144,7 @@ Servicios incluidos dentro de cada presupuesto.
 
 ---
 
-## 🗂️ Diagrama (erd)
+## 🗂️ Diagrama ERD
 
 ```mermaid
 erDiagram
@@ -211,14 +211,19 @@ Las recetas técnicas permiten calcular automáticamente el costo de cada servic
 
 ## 🗄️ Modelo Relacional
 
-- Un servicio tiene muchos insumos (vía receta).
-- Un cliente puede tener muchos presupuestos.
-- Un presupuesto puede incluir muchos servicios.
-- Cada servicio puede aparecer en muchos presupuestos.
+El modelo relacional se compone de las siguientes tablas y relaciones:
+
+- **Clientes** (1:N) **Presupuestos**
+- **Presupuestos** (1:N) **Detalle_Presupuesto**
+- **Servicios** (1:N) **Detalle_Presupuesto**
+- **Servicios** (1:N) **Recetas_Servicio**
+- **Insumos** (1:N) **Recetas_Servicio**
+
+La tabla **Recetas_Servicio** resuelve la relación muchos a muchos entre **Servicios** e **Insumos**, permitiendo calcular automáticamente el costo de cada servicio.
 
 ---
 
-## 🧮 Consulta SQL
+## 🧮 Consultas SQL
 
 Costo total por servicio:
 
